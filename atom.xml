@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-10T00:02:55.186Z</updated>
+  <updated>2017-04-28T12:01:42.277Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css选择器优先级</title>
+    <link href="http://yoursite.com/2017/04/28/css/"/>
+    <id>http://yoursite.com/2017/04/28/css/</id>
+    <published>2017-04-28T11:55:00.000Z</published>
+    <updated>2017-04-28T12:01:42.277Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。</p>
+<p>一般情况下，优先级如下：</p>
+<pre><code>（外部样式）External style sheet &lt;（内部样式）Internal style sheet &lt;（内联样式）Inline style
+</code></pre><p>有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</p>
+<h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><ol>
+<li>内联样式表的权值最高 1000</li>
+<li>ID 选择器的权值为 100</li>
+<li>Class 类选择器的权值为 10</li>
+<li>HTML 标签选择器的权值为 1</li>
+</ol>
+<p>CSS 优先级法则：</p>
+<p>A  选择器都有一个权值，权值越大越优先</p>
+<p>B  当权值相等时，后出现的样式表设置要优于先出现的样式表设置</p>
+<p>C  创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式</p>
+<p>D  继承的CSS 样式不如后来指定的CSS 样式</p>
+<p>E  在同一组属性设置中标有“!important”规则的优先级最大</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。&lt;/p&gt;
+&lt;p&gt;一般情况下，优先级如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;（外部样式）External style sheet &amp;lt;（内部样式）In
+    
+    </summary>
+    
+    
+      <category term="css3" scheme="http://yoursite.com/tags/css3/"/>
+    
+  </entry>
   
   <entry>
     <title>wjq</title>
