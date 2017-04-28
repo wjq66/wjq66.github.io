@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-28T11:55:51.153Z</updated>
+  <updated>2017-04-28T11:57:39.670Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>wjq</title>
+    <title>css选择器优先级</title>
     <link href="http://yoursite.com/2017/04/28/css/"/>
     <id>http://yoursite.com/2017/04/28/css/</id>
     <published>2017-04-28T11:55:00.000Z</published>
-    <updated>2017-04-28T11:55:51.153Z</updated>
+    <updated>2017-04-28T11:57:39.670Z</updated>
     
     <content type="html"><![CDATA[<p>1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。</p>
 <p>一般情况下，优先级如下：</p>
