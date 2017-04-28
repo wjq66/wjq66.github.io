@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-28T11:50:20.353Z</updated>
+  <updated>2017-04-28T11:55:51.153Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,19 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>wjq</title>
     <link href="http://yoursite.com/2017/04/28/css/"/>
     <id>http://yoursite.com/2017/04/28/css/</id>
-    <published>2017-04-28T11:45:50.827Z</published>
-    <updated>2017-04-28T11:50:20.353Z</updated>
+    <published>2017-04-28T11:55:00.000Z</published>
+    <updated>2017-04-28T11:55:51.153Z</updated>
     
-    <content type="html"><![CDATA[<p>##css3选择器优先级</p>
-<p>1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。</p>
+    <content type="html"><![CDATA[<p>1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。</p>
 <p>一般情况下，优先级如下：</p>
 <pre><code>（外部样式）External style sheet &lt;（内部样式）Internal style sheet &lt;（内联样式）Inline style
 </code></pre><p>有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</p>
-<hr>
-<ol>
+<h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><ol>
 <li>内联样式表的权值最高 1000</li>
 <li>ID 选择器的权值为 100</li>
 <li>Class 类选择器的权值为 10</li>
@@ -44,13 +42,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;##css3选择器优先级&lt;/p&gt;
-&lt;p&gt;1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。&lt;/p&gt;
+      &lt;p&gt;1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。&lt;/p&gt;
 &lt;p&gt;一般情况下，优先级如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;（外部样式）External styl
+&lt;pre&gt;&lt;code&gt;（外部样式）External style sheet &amp;lt;（内部样式）In
     
     </summary>
     
+    
+      <category term="No" scheme="http://yoursite.com/tags/No/"/>
     
   </entry>
   
