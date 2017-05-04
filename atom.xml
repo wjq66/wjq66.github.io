@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-28T12:01:42.277Z</updated>
+  <updated>2017-05-04T12:17:23.751Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阻止事件冒泡</title>
+    <link href="http://yoursite.com/2017/05/04/%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1/"/>
+    <id>http://yoursite.com/2017/05/04/阻止冒泡/</id>
+    <published>2017-05-04T12:10:16.397Z</published>
+    <updated>2017-05-04T12:17:23.751Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h3 id="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。"><a href="#描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。" class="headerlink" title="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。"></a>描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。</h3><p>阻止冒泡的方法：</p>
+<pre><code>var event = event || window.event;        //window.evetn兼容ie
+if(event &amp;&amp; event.stopPropagation)        //一般浏览器
+{
+    event.stopPropagation();
+}
+else                                    //ie浏览器
+{
+    event.cancelBubble = true;
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h3 id=&quot;描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。&quot;&gt;&lt;a href=&quot;#描述：事件冒泡：一个div绑定了点
+    
+    </summary>
+    
+    
+      <category term="冒泡" scheme="http://yoursite.com/tags/%E5%86%92%E6%B3%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>css选择器优先级</title>
