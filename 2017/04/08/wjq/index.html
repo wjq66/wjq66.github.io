@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="No," />
+  <meta name="keywords" content="client , scroll," />
 
 
 
@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="title: Hello wjqWelcome to wjq’s …   Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More inf">
-<meta name="keywords" content="No">
+<meta name="description" content="title: 封装client，scroll。##client函数封装 创建一个js文件，里面是client的封装函数myclient.jsfunction client() {     if(window.innerWidth != null)  // ie9 +  最新浏览器     {         return {             width: window.innerWidt">
+<meta name="keywords" content="client , scroll">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wjq">
 <meta property="og:url" content="http://yoursite.com/2017/04/08/wjq/index.html">
 <meta property="og:site_name" content="Hexo wjq">
-<meta property="og:description" content="title: Hello wjqWelcome to wjq’s …   Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More inf">
-<meta property="og:updated_time" content="2017-04-10T00:02:55.186Z">
+<meta property="og:description" content="title: 封装client，scroll。##client函数封装 创建一个js文件，里面是client的封装函数myclient.jsfunction client() {     if(window.innerWidth != null)  // ie9 +  最新浏览器     {         return {             width: window.innerWidt">
+<meta property="og:updated_time" content="2017-05-04T09:35:12.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wjq">
-<meta name="twitter:description" content="title: Hello wjqWelcome to wjq’s …   Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More inf">
+<meta name="twitter:description" content="title: 封装client，scroll。##client函数封装 创建一个js文件，里面是client的封装函数myclient.jsfunction client() {     if(window.innerWidth != null)  // ie9 +  最新浏览器     {         return {             width: window.innerWidt">
 
 
 
@@ -335,16 +335,55 @@
 
       
         <hr>
-<h2 id="title-Hello-wjq"><a href="#title-Hello-wjq" class="headerlink" title="title: Hello wjq"></a>title: Hello wjq</h2><p>Welcome to wjq’s …  </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="title-封装client，scroll。"><a href="#title-封装client，scroll。" class="headerlink" title="title: 封装client，scroll。"></a>title: 封装client，scroll。</h2><p>##client函数封装</p>
+<h3 id="创建一个js文件，里面是client的封装函数"><a href="#创建一个js文件，里面是client的封装函数" class="headerlink" title="创建一个js文件，里面是client的封装函数"></a>创建一个js文件，里面是client的封装函数</h3><h3 id="myclient-js"><a href="#myclient-js" class="headerlink" title="myclient.js"></a>myclient.js</h3><pre><code>function client() {
+    if(window.innerWidth != null)  // ie9 +  最新浏览器
+    {
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+    }
+    else if(document.compatMode === &quot;CSS1Compat&quot;)  // 标准浏览器
+    {
+        return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        }
+    }
+    return {   // 怪异浏览器
+        width: document.body.clientWidth,
+        height: document.body.clientHeight
 
+    }
+}
+</code></pre><h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>引入myclient.js后直接使用，如下：</p>
+<pre><code>document.write(client().width);
+</code></pre><p>##scroll封装</p>
+<h3 id="创建一个js文件myscroll-js"><a href="#创建一个js文件myscroll-js" class="headerlink" title="创建一个js文件myscroll.js"></a>创建一个js文件myscroll.js</h3><h3 id="myscroll-js"><a href="#myscroll-js" class="headerlink" title="myscroll.js"></a>myscroll.js</h3><pre><code>function scroll() {
+    if(window.pageYOffset != null)  //  ie9+ 和其他浏览器
+    {
+        return {
+            left: window.pageXOffset,
+            top: window.pageYOffset
+        }
+    }
+    else if(document.compatMode == &quot;CSS1Compat&quot;)  // 声明的了 DTD
+    // 检测是不是怪异模式的浏览器 -- 就是没有 声明&lt;!DOCTYPE html&gt;
+    {
+        return {
+            left: document.documentElement.scrollLeft,
+            top: document.documentElement.scrollTop
+        }
+    }
+    return { //  剩下的肯定是怪异模式的
+        left: document.body.scrollLeft,
+        top: document.body.scrollTop
+    }
+}
+</code></pre><h3 id="如何使用-1"><a href="#如何使用-1" class="headerlink" title="如何使用"></a>如何使用</h3><p>引入myscroll.js后直接使用，例如：</p>
+<pre><code>document.title = scroll().top;
+</code></pre>
       
     </div>
 
@@ -373,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/No/" rel="tag"># No</a>
+            <a href="/tags/client-scroll/" rel="tag"># client , scroll</a>
           
         </div>
       
@@ -479,7 +518,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -521,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-Hello-wjq"><span class="nav-number">1.</span> <span class="nav-text">title: Hello wjq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">2.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">2.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">2.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-封装client，scroll。"><span class="nav-number">1.</span> <span class="nav-text">title: 封装client，scroll。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个js文件，里面是client的封装函数"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个js文件，里面是client的封装函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#myclient-js"><span class="nav-number">1.2.</span> <span class="nav-text">myclient.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用"><span class="nav-number">1.3.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个js文件myscroll-js"><span class="nav-number">1.4.</span> <span class="nav-text">创建一个js文件myscroll.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#myscroll-js"><span class="nav-number">1.5.</span> <span class="nav-text">myscroll.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用-1"><span class="nav-number">1.6.</span> <span class="nav-text">如何使用</span></a></li></ol></li></ol></div>
             
 
           </div>
