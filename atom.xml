@@ -123,4 +123,74 @@
     
   </entry>
   
+  <entry>
+    <title>封装client，scroll。</title>
+    <link href="http://yoursite.com/2017/04/08/1/"/>
+    <id>http://yoursite.com/2017/04/08/1/</id>
+    <published>2017-04-08T06:02:38.000Z</published>
+    <updated>2017-05-04T09:39:00.781Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="title-封装client，scroll。"><a href="#title-封装client，scroll。" class="headerlink" title="title: 封装client，scroll。"></a>title: 封装client，scroll。</h2><p>##client函数封装</p>
+<h3 id="创建一个js文件，里面是client的封装函数"><a href="#创建一个js文件，里面是client的封装函数" class="headerlink" title="创建一个js文件，里面是client的封装函数"></a>创建一个js文件，里面是client的封装函数</h3><h3 id="myclient-js"><a href="#myclient-js" class="headerlink" title="myclient.js"></a>myclient.js</h3><pre><code>function client() {
+    if(window.innerWidth != null)  // ie9 +  最新浏览器
+    {
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+    }
+    else if(document.compatMode === &quot;CSS1Compat&quot;)  // 标准浏览器
+    {
+        return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        }
+    }
+    return {   // 怪异浏览器
+        width: document.body.clientWidth,
+        height: document.body.clientHeight
+
+    }
+}
+</code></pre><h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>引入myclient.js后直接使用，如下：</p>
+<pre><code>document.write(client().width);
+</code></pre><p>##scroll封装</p>
+<h3 id="创建一个js文件myscroll-js"><a href="#创建一个js文件myscroll-js" class="headerlink" title="创建一个js文件myscroll.js"></a>创建一个js文件myscroll.js</h3><h3 id="myscroll-js"><a href="#myscroll-js" class="headerlink" title="myscroll.js"></a>myscroll.js</h3><pre><code>function scroll() {
+    if(window.pageYOffset != null)  //  ie9+ 和其他浏览器
+    {
+        return {
+            left: window.pageXOffset,
+            top: window.pageYOffset
+        }
+    }
+    else if(document.compatMode == &quot;CSS1Compat&quot;)  // 声明的了 DTD
+    // 检测是不是怪异模式的浏览器 -- 就是没有 声明&lt;!DOCTYPE html&gt;
+    {
+        return {
+            left: document.documentElement.scrollLeft,
+            top: document.documentElement.scrollTop
+        }
+    }
+    return { //  剩下的肯定是怪异模式的
+        left: document.body.scrollLeft,
+        top: document.body.scrollTop
+    }
+}
+</code></pre><h3 id="如何使用-1"><a href="#如何使用-1" class="headerlink" title="如何使用"></a>如何使用</h3><p>引入myscroll.js后直接使用，例如：</p>
+<pre><code>document.title = scroll().top;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;title-封装client，scroll。&quot;&gt;&lt;a href=&quot;#title-封装client，scroll。&quot; class=&quot;headerlink&quot; title=&quot;title: 封装client，scroll。&quot;&gt;&lt;/a&gt;title: 封装clien
+    
+    </summary>
+    
+    
+      <category term="client , scroll" scheme="http://yoursite.com/tags/client-scroll/"/>
+    
+  </entry>
+  
 </feed>
