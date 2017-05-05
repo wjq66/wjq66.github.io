@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="动画," />
 
 
 
@@ -89,12 +89,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo wjq">
-<meta property="og:url" content="http://yoursite.com/tags/getSelection，selection/index.html">
+<meta name="description" content="核心代码：  btn.onclick = function() {      timer = setInterval(function() {          // 盒子本身的位置  +  步长 (不断变化的)          //target指的是目标位置，step在慢慢变小          var step = (target - box.offsetLeft) / 10;   // 步">
+<meta name="keywords" content="动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css之缓动动画原理">
+<meta property="og:url" content="http://yoursite.com/2017/05/05/css_缓动动画/index.html">
 <meta property="og:site_name" content="Hexo wjq">
+<meta property="og:description" content="核心代码：  btn.onclick = function() {      timer = setInterval(function() {          // 盒子本身的位置  +  步长 (不断变化的)          //target指的是目标位置，step在慢慢变小          var step = (target - box.offsetLeft) / 10;   // 步">
+<meta property="og:updated_time" content="2017-05-05T08:14:23.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo wjq">
+<meta name="twitter:title" content="css之缓动动画原理">
+<meta name="twitter:description" content="核心代码：  btn.onclick = function() {      timer = setInterval(function() {          // 盒子本身的位置  +  步长 (不断变化的)          //target指的是目标位置，step在慢慢变小          var step = (target - box.offsetLeft) / 10;   // 步">
 
 
 
@@ -122,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/getSelection，selection/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/05/css_缓动动画/"/>
 
 
 
 
 
-  <title> 标签: getSelection，selection | Hexo wjq </title>
+  <title> css之缓动动画原理 | Hexo wjq </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -153,7 +158,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,46 +252,217 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        getSelection，selection
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/css_缓动动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wjq">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tou.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo wjq">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css之缓动动画原理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T16:08:47+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>核心代码：</p>
+<pre><code> btn.onclick = function() {
+     timer = setInterval(function() {
+         // 盒子本身的位置  +  步长 (不断变化的)
+         //target指的是目标位置，step在慢慢变小
+         var step = (target - box.offsetLeft) / 10;   // 步长
+         console.log(step);
+         step =  step &gt; 0 ? Math.ceil(step) : Math.floor(step);  // 步长取整
+         box.style.left = box.offsetLeft + step + &quot;px&quot;;
+         if(box.offsetLeft == target) // 判断结束条件
+         {
+             clearInterval(timer);
+         }
+     },30)
 
-      <h1 class="post-title">
+}
+</code></pre><p>完整代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;btn&quot;&gt;开始&lt;/button&gt;
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+    var btn = document.getElementById(&quot;btn&quot;);
+    var box = document.getElementById(&quot;box&quot;);
+    var target = 400;
+    var timer = null;
+    btn.onclick = function() {
+         timer = setInterval(function() {
+             // 盒子本身的位置  +  步长 (不断变化的)
+             var step = (target - box.offsetLeft) / 10;   // 步长
+             console.log(step);
+             step =  step &gt; 0 ? Math.ceil(step) : Math.floor(step);  // 步长取整
+             box.style.left = box.offsetLeft + step + &quot;px&quot;;
+             if(box.offsetLeft == target) // 判断结束条件
+             {
+                 clearInterval(timer);
+                 alert(&quot;到目标了&quot;)
+             }
+         },30)
+
+    }
+&lt;/script&gt;
+</code></pre>
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/04/获取用户选择的内容/" itemprop="url">
-              
-                <span itemprop="name">获取用户选择的内容</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-04T20:39:54+08:00"
-              content="2017-05-04" >
-          05-04
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动画/" rel="tag"># 动画</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/05/多个属性运动框架/" rel="next" title="多个属性运动框架。">
+                <i class="fa fa-chevron-left"></i> 多个属性运动框架。
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/04/获取用户选择的内容/" rel="prev" title="获取用户选择的内容">
+                获取用户选择的内容 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -294,6 +470,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -488,6 +668,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

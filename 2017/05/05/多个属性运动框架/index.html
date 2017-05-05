@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="冒泡," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。阻止冒泡的方法： var event = event || window.event;        //window.evetn兼容ie if(event &amp;amp;&amp;amp; event.stopP">
-<meta name="keywords" content="冒泡">
+<meta name="description" content="核心代码： // 多个属性运动框架  添加回调函数 function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面">
+<meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阻止事件冒泡">
-<meta property="og:url" content="http://yoursite.com/2017/05/04/阻止冒泡/index.html">
+<meta property="og:title" content="多个属性运动框架。">
+<meta property="og:url" content="http://yoursite.com/2017/05/05/多个属性运动框架/index.html">
 <meta property="og:site_name" content="Hexo wjq">
-<meta property="og:description" content="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。阻止冒泡的方法： var event = event || window.event;        //window.evetn兼容ie if(event &amp;amp;&amp;amp; event.stopP">
-<meta property="og:updated_time" content="2017-05-04T12:17:23.751Z">
+<meta property="og:description" content="核心代码： // 多个属性运动框架  添加回调函数 function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面">
+<meta property="og:updated_time" content="2017-05-05T13:44:15.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阻止事件冒泡">
-<meta name="twitter:description" content="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。阻止冒泡的方法： var event = event || window.event;        //window.evetn兼容ie if(event &amp;amp;&amp;amp; event.stopP">
+<meta name="twitter:title" content="多个属性运动框架。">
+<meta name="twitter:description" content="核心代码： // 多个属性运动框架  添加回调函数 function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/04/阻止冒泡/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/05/多个属性运动框架/"/>
 
 
 
 
 
-  <title> 阻止事件冒泡 | Hexo wjq </title>
+  <title> 多个属性运动框架。 | Hexo wjq </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/阻止冒泡/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/多个属性运动框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wjq">
@@ -283,7 +283,7 @@
             
             
               
-                阻止事件冒泡
+                多个属性运动框架。
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T20:10:16+08:00">
-                2017-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T21:19:05+08:00">
+                2017-05-05
               </time>
             
 
@@ -334,17 +334,127 @@
       
 
       
-        <hr>
-<h3 id="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。"><a href="#描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。" class="headerlink" title="描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。"></a>描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。</h3><p>阻止冒泡的方法：</p>
-<pre><code>var event = event || window.event;        //window.evetn兼容ie
-if(event &amp;&amp; event.stopPropagation)        //一般浏览器
-{
-    event.stopPropagation();
+        <p>核心代码：</p>
+<pre><code>// 多个属性运动框架  添加回调函数
+function animate(obj,json,fn) {  // 给谁    json
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function() {
+        var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+        for(var attr in json){   // attr  属性     json[attr]  值
+            //开始遍历 json
+            // 计算步长    用 target 位置 减去当前的位置  除以 10
+           // console.log(attr);
+            var current = parseInt(getStyle(obj,attr));  // 数值
+           // console.log(current);
+             // 目标位置就是  属性值
+            var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+            obj.style[attr] = current  + step + &quot;px&quot; ;
+            console.log(current);
+            if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+            {
+                flag =  false;
+            }
+        }
+        if(flag)  // 用于判断定时器的条件
+        {
+            clearInterval(obj.timer);
+            //alert(&quot;ok了&quot;);
+            if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+            {
+                fn(); // 函数名 +  （）  调用函数  执行函数
+            }
+        }
+    },30)
 }
-else                                    //ie浏览器
-{
-    event.cancelBubble = true;
+
+function getStyle(obj,attr) {  //  谁的      那个属性
+    if(obj.currentStyle)  // ie 等
+    {
+        return obj.currentStyle[attr];  // 返回传递过来的某个属性
+    }
+    else
+    {
+        return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+    }
 }
+</code></pre><p>完整代码:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style&gt;
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        border-radius: 50%;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;btn200&quot;&gt;200&lt;/button&gt;
+&lt;button id=&quot;btn400&quot;&gt;400&lt;/button&gt;
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+    var btn200 = document.getElementById(&quot;btn200&quot;);
+    var btn400 = document.getElementById(&quot;btn400&quot;);
+    var box = document.getElementById(&quot;box&quot;);
+    btn200.onclick = function() {
+        animate(box,{width: 200, top: 800,left: 200},function(){alert(&quot;我来了&quot;)});
+    }
+    btn400.onclick = function() {
+        animate(box,{top:500});
+    }
+    // 多个属性运动框架  添加回调函数
+    function animate(obj,json,fn) {  // 给谁    json
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+            for(var attr in json){   // attr  属性     json[attr]  值
+                //开始遍历 json
+                // 计算步长    用 target 位置 减去当前的位置  除以 10
+               // console.log(attr);
+                var current = parseInt(getStyle(obj,attr));  // 数值
+               // console.log(current);
+                 // 目标位置就是  属性值
+                var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+                step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style[attr] = current  + step + &quot;px&quot; ;
+                console.log(current);
+                if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+                {
+                    flag =  false;
+                }
+            }
+            if(flag)  // 用于判断定时器的条件
+            {
+                clearInterval(obj.timer);
+                //alert(&quot;ok了&quot;);
+                if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+                {
+                    fn(); // 函数名 +  （）  调用函数  执行函数
+                }
+            }
+        },30)
+    }
+    function getStyle(obj,attr) {  //  谁的      那个属性
+        if(obj.currentStyle)  // ie 等
+        {
+            return obj.currentStyle[attr];  // 返回传递过来的某个属性
+        }
+        else
+        {
+            return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+        }
+    }
+&lt;/script&gt;
 </code></pre>
       
     </div>
@@ -372,12 +482,6 @@ else                                    //ie浏览器
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/冒泡/" rel="tag"># 冒泡</a>
-          
-        </div>
-      
 
       
         
@@ -387,18 +491,14 @@ else                                    //ie浏览器
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/获取用户选择的内容/" rel="next" title="获取用户选择的内容">
-                <i class="fa fa-chevron-left"></i> 获取用户选择的内容
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/28/css/" rel="prev" title="css选择器优先级">
-                css选择器优先级 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/05/css_缓动动画/" rel="prev" title="css之缓动动画原理">
+                css之缓动动画原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -446,17 +546,8 @@ else                                    //ie浏览器
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/tou.jpg"
@@ -516,22 +607,6 @@ else                                    //ie浏览器
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。"><span class="nav-number">1.</span> <span class="nav-text">描述：事件冒泡：一个div绑定了点击事件，div的父级是body，body的父级是html，所以点击div相当于点击了body，点击了html。如果body或者html也有点击事件，就会出现异常。</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

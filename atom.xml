@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-04T12:42:41.991Z</updated>
+  <updated>2017-05-05T13:44:15.905Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,231 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多个属性运动框架。</title>
+    <link href="http://yoursite.com/2017/05/05/%E5%A4%9A%E4%B8%AA%E5%B1%9E%E6%80%A7%E8%BF%90%E5%8A%A8%E6%A1%86%E6%9E%B6/"/>
+    <id>http://yoursite.com/2017/05/05/多个属性运动框架/</id>
+    <published>2017-05-05T13:19:05.258Z</published>
+    <updated>2017-05-05T13:44:15.905Z</updated>
+    
+    <content type="html"><![CDATA[<p>核心代码：</p>
+<pre><code>// 多个属性运动框架  添加回调函数
+function animate(obj,json,fn) {  // 给谁    json
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function() {
+        var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+        for(var attr in json){   // attr  属性     json[attr]  值
+            //开始遍历 json
+            // 计算步长    用 target 位置 减去当前的位置  除以 10
+           // console.log(attr);
+            var current = parseInt(getStyle(obj,attr));  // 数值
+           // console.log(current);
+             // 目标位置就是  属性值
+            var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+            obj.style[attr] = current  + step + &quot;px&quot; ;
+            console.log(current);
+            if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+            {
+                flag =  false;
+            }
+        }
+        if(flag)  // 用于判断定时器的条件
+        {
+            clearInterval(obj.timer);
+            //alert(&quot;ok了&quot;);
+            if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+            {
+                fn(); // 函数名 +  （）  调用函数  执行函数
+            }
+        }
+    },30)
+}
+
+function getStyle(obj,attr) {  //  谁的      那个属性
+    if(obj.currentStyle)  // ie 等
+    {
+        return obj.currentStyle[attr];  // 返回传递过来的某个属性
+    }
+    else
+    {
+        return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+    }
+}
+</code></pre><p>完整代码:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;style&gt;
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        border-radius: 50%;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;btn200&quot;&gt;200&lt;/button&gt;
+&lt;button id=&quot;btn400&quot;&gt;400&lt;/button&gt;
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+    var btn200 = document.getElementById(&quot;btn200&quot;);
+    var btn400 = document.getElementById(&quot;btn400&quot;);
+    var box = document.getElementById(&quot;box&quot;);
+    btn200.onclick = function() {
+        animate(box,{width: 200, top: 800,left: 200},function(){alert(&quot;我来了&quot;)});
+    }
+    btn400.onclick = function() {
+        animate(box,{top:500});
+    }
+    // 多个属性运动框架  添加回调函数
+    function animate(obj,json,fn) {  // 给谁    json
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+            for(var attr in json){   // attr  属性     json[attr]  值
+                //开始遍历 json
+                // 计算步长    用 target 位置 减去当前的位置  除以 10
+               // console.log(attr);
+                var current = parseInt(getStyle(obj,attr));  // 数值
+               // console.log(current);
+                 // 目标位置就是  属性值
+                var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+                step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+                obj.style[attr] = current  + step + &quot;px&quot; ;
+                console.log(current);
+                if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+                {
+                    flag =  false;
+                }
+            }
+            if(flag)  // 用于判断定时器的条件
+            {
+                clearInterval(obj.timer);
+                //alert(&quot;ok了&quot;);
+                if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+                {
+                    fn(); // 函数名 +  （）  调用函数  执行函数
+                }
+            }
+        },30)
+    }
+    function getStyle(obj,attr) {  //  谁的      那个属性
+        if(obj.currentStyle)  // ie 等
+        {
+            return obj.currentStyle[attr];  // 返回传递过来的某个属性
+        }
+        else
+        {
+            return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+        }
+    }
+&lt;/script&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;核心代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 多个属性运动框架  添加回调函数
+function animate(obj,json,fn) {  // 给谁    json
+    clearInterval(obj.timer);
+    obj.timer = set
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css之缓动动画原理</title>
+    <link href="http://yoursite.com/2017/05/05/css_%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB/"/>
+    <id>http://yoursite.com/2017/05/05/css_缓动动画/</id>
+    <published>2017-05-05T08:08:47.941Z</published>
+    <updated>2017-05-05T08:14:23.276Z</updated>
+    
+    <content type="html"><![CDATA[<p>核心代码：</p>
+<pre><code> btn.onclick = function() {
+     timer = setInterval(function() {
+         // 盒子本身的位置  +  步长 (不断变化的)
+         //target指的是目标位置，step在慢慢变小
+         var step = (target - box.offsetLeft) / 10;   // 步长
+         console.log(step);
+         step =  step &gt; 0 ? Math.ceil(step) : Math.floor(step);  // 步长取整
+         box.style.left = box.offsetLeft + step + &quot;px&quot;;
+         if(box.offsetLeft == target) // 判断结束条件
+         {
+             clearInterval(timer);
+         }
+     },30)
+
+}
+</code></pre><p>完整代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;btn&quot;&gt;开始&lt;/button&gt;
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+    var btn = document.getElementById(&quot;btn&quot;);
+    var box = document.getElementById(&quot;box&quot;);
+    var target = 400;
+    var timer = null;
+    btn.onclick = function() {
+         timer = setInterval(function() {
+             // 盒子本身的位置  +  步长 (不断变化的)
+             var step = (target - box.offsetLeft) / 10;   // 步长
+             console.log(step);
+             step =  step &gt; 0 ? Math.ceil(step) : Math.floor(step);  // 步长取整
+             box.style.left = box.offsetLeft + step + &quot;px&quot;;
+             if(box.offsetLeft == target) // 判断结束条件
+             {
+                 clearInterval(timer);
+                 alert(&quot;到目标了&quot;)
+             }
+         },30)
+
+    }
+&lt;/script&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;核心代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; btn.onclick = function() {
+     timer = setInterval(function() {
+         // 盒子本身的位置  +  步长 (不断变化的)
+         //targ
+    
+    </summary>
+    
+    
+      <category term="动画" scheme="http://yoursite.com/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>获取用户选择的内容</title>
