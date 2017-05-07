@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css3," />
+  <meta name="keywords" content="运动框架," />
 
 
 
@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。 一般情况下，优先级如下： （外部样式）External style sheet &amp;lt;（内部样式）Internal style sheet &amp;lt;（内联样式）Inline style 有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。 — 内">
-<meta name="keywords" content="css3">
+<meta name="description" content="function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面         for(var attr in json)">
+<meta name="keywords" content="运动框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css选择器优先级">
-<meta property="og:url" content="http://yoursite.com/2017/04/28/css/index.html">
+<meta property="og:title" content="多个属性运动框架（加透明度层级）">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/加透明度运动框架/index.html">
 <meta property="og:site_name" content="Hexo wjq">
-<meta property="og:description" content="1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。 一般情况下，优先级如下： （外部样式）External style sheet &amp;lt;（内部样式）Internal style sheet &amp;lt;（内联样式）Inline style 有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。 — 内">
-<meta property="og:updated_time" content="2017-04-28T12:01:42.277Z">
+<meta property="og:description" content="function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面         for(var attr in json)">
+<meta property="og:updated_time" content="2017-05-06T01:16:07.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css选择器优先级">
-<meta name="twitter:description" content="1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。 一般情况下，优先级如下： （外部样式）External style sheet &amp;lt;（内部样式）Internal style sheet &amp;lt;（内联样式）Inline style 有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。 — 内">
+<meta name="twitter:title" content="多个属性运动框架（加透明度层级）">
+<meta name="twitter:description" content="function animate(obj,json,fn) {  // 给谁    json     clearInterval(obj.timer);     obj.timer = setInterval(function() {         var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面         for(var attr in json)">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/28/css/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/加透明度运动框架/"/>
 
 
 
 
 
-  <title> css选择器优先级 | Hexo wjq </title>
+  <title> 多个属性运动框架（加透明度层级） | Hexo wjq </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/css/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/加透明度运动框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wjq">
@@ -283,7 +283,7 @@
             
             
               
-                css选择器优先级
+                多个属性运动框架（加透明度层级）
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T19:55:00+08:00">
-                2017-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T09:12:24+08:00">
+                2017-05-06
               </time>
             
 
@@ -334,23 +334,185 @@
       
 
       
-        <p>1、多重样式（Multiple Styles）：如果外部样式、内部样式和内联样式同时应用于同一个元素，就是使多重样式的情况。</p>
-<p>一般情况下，优先级如下：</p>
-<pre><code>（外部样式）External style sheet &lt;（内部样式）Internal style sheet &lt;（内联样式）Inline style
-</code></pre><p>有个例外的情况，就是如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</p>
-<h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><ol>
-<li>内联样式表的权值最高 1000</li>
-<li>ID 选择器的权值为 100</li>
-<li>Class 类选择器的权值为 10</li>
-<li>HTML 标签选择器的权值为 1</li>
-</ol>
-<p>CSS 优先级法则：</p>
-<p>A  选择器都有一个权值，权值越大越优先</p>
-<p>B  当权值相等时，后出现的样式表设置要优于先出现的样式表设置</p>
-<p>C  创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式</p>
-<p>D  继承的CSS 样式不如后来指定的CSS 样式</p>
-<p>E  在同一组属性设置中标有“!important”规则的优先级最大</p>
+        <pre><code>function animate(obj,json,fn) {  // 给谁    json
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function() {
+        var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+        for(var attr in json){   // attr  属性     json[attr]  值
+            //开始遍历 json
+            // 计算步长    用 target 位置 减去当前的位置  除以 10
+           // console.log(attr);
+            var current = 0;
+            if(attr == &quot;opacity&quot;)
+            {
+                current = Math.round(parseInt(getStyle(obj,attr)*100)) || 0;
+                console.log(current);
+            }
+            else
+            {
+                current = parseInt(getStyle(obj,attr)); // 数值
+            }
+           // console.log(current);
+             // 目标位置就是  属性值
+            var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+            step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+            //判断透明度
+            if(attr == &quot;opacity&quot;)  // 判断用户有没有输入 opacity
+            {
+                 if(&quot;opacity&quot; in obj.style)  // 判断 我们浏览器是否支持opacity
+                 {
+                     // obj.style.opacity
+                     obj.style.opacity = (current + step) /100;
+                 }
+                else
+                 {  // obj.style.filter = alpha(opacity = 30)
+                     obj.style.filter = &quot;alpha(opacity = &quot;+(current + step)* 10+&quot;)&quot;;
 
+                 }
+            }
+            else if(attr == &quot;zIndex&quot;)
+            {
+                obj.style.zIndex = json[attr];
+            }
+            else
+            {
+                obj.style[attr] = current  + step + &quot;px&quot; ;
+            }
+
+            if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+            {
+                flag =  false;
+            }
+        }
+        if(flag)  // 用于判断定时器的条件
+        {
+            clearInterval(obj.timer);
+            //alert(&quot;ok了&quot;);
+            if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+            {
+                fn(); // 函数名 +  （）  调用函数  执行函数
+            }
+        }
+    },30)
+}
+function getStyle(obj,attr) {  //  谁的      那个属性
+    if(obj.currentStyle)  // ie 等
+    {
+        return obj.currentStyle[attr];  // 返回传递过来的某个属性
+    }
+    else
+    {
+        return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+    }
+}
+</code></pre><p>完整代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            border-radius: 50%;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button id=&quot;btn200&quot;&gt;200&lt;/button&gt;
+&lt;button id=&quot;btn400&quot;&gt;400&lt;/button&gt;
+&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script&gt;
+    var btn200 = document.getElementById(&quot;btn200&quot;);
+    var btn400 = document.getElementById(&quot;btn400&quot;);
+    var box = document.getElementById(&quot;box&quot;);
+    btn200.onclick = function() {
+        animate(box,{width: 200, top: 100,left: 200,opacity:40,zIndex:3},function(){alert(&quot;我来了&quot;)});
+    }
+    btn400.onclick = function() {
+        animate(box,{top:500});
+    }
+    // 多个属性运动框架  添加回调函数
+    function animate(obj,json,fn) {  // 给谁    json
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            var flag = true;  // 用来判断是否停止定时器   一定写到遍历的外面
+            for(var attr in json){   // attr  属性     json[attr]  值
+                //开始遍历 json
+                // 计算步长    用 target 位置 减去当前的位置  除以 10
+               // console.log(attr);
+                var current = 0;
+                if(attr == &quot;opacity&quot;)
+                {
+                    current = Math.round(parseInt(getStyle(obj,attr)*100)) || 0;
+                    console.log(current);
+                }
+                else
+                {
+                    current = parseInt(getStyle(obj,attr)); // 数值
+                }
+               // console.log(current);
+                 // 目标位置就是  属性值
+                var step = ( json[attr] - current) / 10;  // 步长  用目标位置 - 现在的位置 / 10
+                step = step &gt; 0 ? Math.ceil(step) : Math.floor(step);
+                //判断透明度
+                if(attr == &quot;opacity&quot;)  // 判断用户有没有输入 opacity
+                {
+                     if(&quot;opacity&quot; in obj.style)  // 判断 我们浏览器是否支持opacity
+                     {
+                         // obj.style.opacity
+                         obj.style.opacity = (current + step) /100;
+                     }
+                    else
+                     {  // obj.style.filter = alpha(opacity = 30)
+                         obj.style.filter = &quot;alpha(opacity = &quot;+(current + step)* 10+&quot;)&quot;;
+
+                     }
+                }
+                else if(attr == &quot;zIndex&quot;)
+                {
+                    obj.style.zIndex = json[attr];
+                }
+                else
+                {
+                    obj.style[attr] = current  + step + &quot;px&quot; ;
+                }
+
+                if(current != json[attr])  // 只要其中一个不满足条件 就不应该停止定时器  这句一定遍历里面
+                {
+                    flag =  false;
+                }
+            }
+            if(flag)  // 用于判断定时器的条件
+            {
+                clearInterval(obj.timer);
+                //alert(&quot;ok了&quot;);
+                if(fn)   // 很简单   当定时器停止了。 动画就结束了  如果有回调，就应该执行回调
+                {
+                    fn(); // 函数名 +  （）  调用函数  执行函数
+                }
+            }
+        },30)
+    }
+    function getStyle(obj,attr) {  //  谁的      那个属性
+        if(obj.currentStyle)  // ie 等
+        {
+            return obj.currentStyle[attr];  // 返回传递过来的某个属性
+        }
+        else
+        {
+            return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+        }
+    }
+&lt;/script&gt;
+</code></pre>
       
     </div>
 
@@ -379,7 +541,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css3/" rel="tag"># css3</a>
+            <a href="/tags/运动框架/" rel="tag"># 运动框架</a>
           
         </div>
       
@@ -392,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/阻止冒泡/" rel="next" title="阻止事件冒泡">
-                <i class="fa fa-chevron-left"></i> 阻止事件冒泡
+              <a href="/2017/05/07/jQuery总结/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -402,8 +564,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/08/client_scroll/" rel="prev" title="封装client，scroll。">
-                封装client，scroll。 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/05/多个属性运动框架/" rel="prev" title="多个属性运动框架。">
+                多个属性运动框架。 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -451,17 +613,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/tou.jpg"
@@ -521,22 +674,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#—"><span class="nav-number">1.</span> <span class="nav-text">—</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
