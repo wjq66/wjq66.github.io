@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-07T09:20:40.561Z</updated>
+  <updated>2017-05-08T08:37:40.794Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2017/05/07/jQuery%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/05/07/jQuery总结/</id>
     <published>2017-05-07T09:21:52.227Z</published>
-    <updated>2017-05-07T09:20:40.561Z</updated>
+    <updated>2017-05-08T08:37:40.794Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="jQuery-复习–by-传智前端与移动开发学院"><a href="#jQuery-复习–by-传智前端与移动开发学院" class="headerlink" title="jQuery 复习–by 传智前端与移动开发学院"></a>jQuery 复习–by 传智前端与移动开发学院</h1><h2 id="1-jQuery是什么？-了解"><a href="#1-jQuery是什么？-了解" class="headerlink" title="1. jQuery是什么？(了解)"></a>1. jQuery是什么？(了解)</h2><ul>
+    <content type="html"><![CDATA[<h1 id="jQuery-复习"><a href="#jQuery-复习" class="headerlink" title="jQuery 复习-"></a>jQuery 复习-</h1><h2 id="1-jQuery是什么？-了解"><a href="#1-jQuery是什么？-了解" class="headerlink" title="1. jQuery是什么？(了解)"></a>1. jQuery是什么？(了解)</h2><ul>
 <li>jQuery 其实就是一堆的js函数，是普通的js，只不过应用广泛，形成了行业标准。</li>
 <li>学习参考：<a href="http://www.w3school.com.cn/jquery/" target="_blank" rel="external">http://www.w3school.com.cn/jquery/</a></li>
 <li>官网：<a href="http://jquery.com/" target="_blank" rel="external">http://jquery.com/</a></li>
@@ -268,16 +268,110 @@ $( &quot;div.test&quot; ).on({
 <li>案例：</li>
 </ul>
 <h2 id="8-jQuery补充"><a href="#8-jQuery补充" class="headerlink" title="8. jQuery补充"></a>8. jQuery补充</h2><ul>
-<li>8.1 each函数<ul>
-<li>全局的<ul>
+<li><p>8.1 链式编程： end()补充</p>
+<ul>
+<li>补充五角星 评论案例</li>
+<li>第一步：鼠标移入，当前五角星和前面的五角星变实体。后面的变空心五角星</li>
+<li>第二步：鼠标点击的时候，为当前元素添加clicked类，其他的移除clicked类</li>
+<li>第三步：当鼠标移开整个评分控件的时候，把clicked的之前的五角星显示实心</li>
+</ul>
+</li>
+<li><p>8.2 隐式迭代</p>
+<ul>
+<li>默认情况下，会自动迭代执行jQuery选择出来所有dom元素的操作。</li>
+<li>如果获取的是多元素的值，默认返回的是第一个元素的值。</li>
+</ul>
+</li>
+<li><p>8.3 map函数</p>
+<ul>
+<li>$.map(arry,function(object,index){})  <em>返回一个新的数组</em></li>
+<li></li>
+<li>var arry = $(“li”).map(function(index, element){}) <em>注意参数的顺序是反的</em></li>
+</ul>
+</li>
+</ul>
+<pre><code>var newArr = $.map($(&quot;li&quot;), function(i, e) {
+       return $(e).text() + i;//每一项返回的结果组成新数组
+   });
+
+   var newArr = $(&quot;li&quot;).map(function(elem, index){
+       console.log(&quot;elem:&quot; + elem);
+       console.log(&quot;index:&quot; + index);
+       retrun index;
+   });
+</code></pre><ul>
+<li><p>8.4 each函数</p>
+<ul>
+<li>全局的</li>
 <li>$.each(array, function(index, object){})</li>
-</ul>
-</li>
-<li>普通jQuery对象的each方法<ul>
+<li></li>
 <li>$(“li”).each(function(index, element){} )</li>
-<li>参数的顺序是一致的。</li>
+<li><p>参数的顺序是一致的。</p>
+<p>例如：</p>
+<p>  $( “li” ).each(function() {</p>
+<pre><code>$( this ).addClass( &quot;foo&quot; );
+  });
+</code></pre><p>  $( “li” ).each(function( index ) {</p>
+<pre><code>console.log( index + &quot;: &quot; + $( this ).text() );
+</code></pre><p>  });</p>
+<pre><code>$( &quot;div&quot; ).each(function( index, element ) {});
+</code></pre></li>
 </ul>
 </li>
+</ul>
+<ul>
+<li><p>8.5 noConflict 全局对象污染冲突</p>
+<pre><code>$  jQuery
+
+var $ = { name : &quot;itecast&quot; };
+
+&lt;script src=&quot;jQueryDemos/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- $ === jQuery --&gt;
+
+var laoma_jQ = $.noConflict();//让jQuery释放 $, 让$ 回归到jQuery之前的对象定义上去。
+$.name
+
+jQuery
+</code></pre></li>
+<li><p>8.6 jQuery.data()  jQuery对象的数据缓存。(了解)</p>
+<pre><code>$(&quot;.nav&quot;).data(&quot;name&quot;, 123);//设置值。
+  var t  = $(&quot;.nav&quot;).data(&quot;name&quot;); //获取值
+  t.name = &quot;18&quot;;//对象的更改，会直接同步到 元素的jQuery对象上去。
+</code></pre></li>
+<li><p>8.7 会做jQuery插件</p>
+<ul>
+<li>全局jQuery函数扩展方法</li>
+</ul>
+</li>
+</ul>
+<pre><code> $.log = function() {
+
+ }
+
+ //$(&quot;li&quot;)
+
+
+* jQuery对象扩展方法
+
+    $.fn.log = function() {
+
+    }
+</code></pre><ul>
+<li><p>8.8 引入第三方插件</p>
+<ul>
+<li>背景色动画插件</li>
+<li>lazyload 插件</li>
+<li>jQuery UI 插件</li>
+</ul>
+</li>
+<li><p>8.9 sublime 装插件</p>
+<ul>
+<li>sublime 3</li>
+<li>第一步： 装上sublime的包管理器package control </li>
+<li>ctrl+ ~  </li>
+<li>上网把 按照package control的那段代码，粘贴一下，然后回车。</li>
+<li></li>
+<li>第二步：使用Ctrl + shift + p</li>
 </ul>
 </li>
 </ul>
@@ -285,7 +379,7 @@ $( &quot;div.test&quot; ).on({
     
     <summary type="html">
     
-      &lt;h1 id=&quot;jQuery-复习–by-传智前端与移动开发学院&quot;&gt;&lt;a href=&quot;#jQuery-复习–by-传智前端与移动开发学院&quot; class=&quot;headerlink&quot; title=&quot;jQuery 复习–by 传智前端与移动开发学院&quot;&gt;&lt;/a&gt;jQuery 复习–by 传
+      &lt;h1 id=&quot;jQuery-复习&quot;&gt;&lt;a href=&quot;#jQuery-复习&quot; class=&quot;headerlink&quot; title=&quot;jQuery 复习-&quot;&gt;&lt;/a&gt;jQuery 复习-&lt;/h1&gt;&lt;h2 id=&quot;1-jQuery是什么？-了解&quot;&gt;&lt;a href=&quot;#1-jQuery
     
     </summary>
     
